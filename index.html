@@ -6,13 +6,16 @@
   </head>
   <body>
     <section class="main-interface">
+
       <h1>ROYAL PUNCHING SOCIETY</h1>
-      <h2>A GAME OF PUREST SKILL</h2>
-      <h3 class="training">Training</h3>
-      <p class="training-text">Here’s some stuff we found in a scribe’s desk. Also, here’s the scribe.
+      <h2>A TOURNAMENT OF PURE SKILL</h2>
+
+      <h3 class="game-blurb">Welcome to the Royal Punching Society.<h3>
+
+      <h2 class="training">Training</h2>
+      <h3 class="training-blurb">Here’s some stuff we found in a scribe’s desk. Also, here’s the scribe.
          He’ll be training you to compete in the Royal Punching Society.
-         It’s his punishment for wasting valuable ink and parchment on those ghastly
-         fanfics of his.</p>
+         It’s his punishment for wasting valuable ink and parchment on- ...nay, I dare not speak of it.</h3>
       <h4 class="training-rules">RULES:</h4>
         <p class="move-name">ROCK</p>
         <p>Beats SCISSORS but loses to PAPER</p>
@@ -21,8 +24,17 @@
         <p class="move-name">SCISSORS</p>
         <p>Beats PAPER but loses to ROCK</p>
         <button class="opponent-button" id="scri-button" type="button">Train with The Scribe</button>
-      <h3 class="tournament-edition">R.P.S. Tournament Edition</h3>
+
+        <section>
+          <button class="training-button" id="rock-button">ROCK</button>
+          <button class="training-button" id="paper-button">PAPER</button>
+          <button class="training-button" id="scissors-button">SCISSORS</button>
+        </section>
+
+      <h2 class="tournament-edition">R.P.S. Tournament Edition</h2>
+        <p class="tournament-blurb">tournament blurb</p>
       <h4 class="tournament-rules">RULES:</h4>
+      <h5 class="more-tournament-rules"></h5>
         <p class="move-name">ATTACK:</p>
         <p>Beats LOW ATTACK and HIGH ATTACK but loses to LOW BLOCK and HIGH BLOCK</p>
         <p class="move-name">LOW ATTACK:</p>
@@ -66,8 +78,8 @@
         </section>
       <h4 class="opponent-wins">Wins:</h4>
     </section>
-    <script src="./main.js"></script>
-    <script src="./game.js"></script>
-    <script src="./player.js"></script>
+    <script src='./main.js'></script>
+    <script src='./game.js'></script>
+    <script src='./player.js'></script>
   </body>
 </html>
