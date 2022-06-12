@@ -1,4 +1,10 @@
-var sirMix = [
+var scribeMovelist = [
+  'rock',
+  'paper',
+  'scissors',
+]
+
+var mixMovelist = [
   'atk',
   'atk',
   'lowA',
@@ -21,7 +27,7 @@ var sirMix = [
   'lowB'
 ]
 
-var happyC = [
+var camperMovelist = [
   'atk',
   'atk',
   'atk',
@@ -44,7 +50,7 @@ var happyC = [
   'lowB',
 ]
 
-var gert = [
+var gertMovelist = [
   'atk',
   'atk',
   'atk',
@@ -65,4 +71,12 @@ var gert = [
   'jumpA',
   'jumpA',
   'jumpA',
+]
+
+var sporkeMovelist = [
+  'atk',
+  'jumpA',
+  'lowA',
+  'highB',
+  'lowB'
 ]
