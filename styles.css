@@ -1,0 +1,57 @@
+html {
+  height: 100vh;
+}
+
+body {
+display: flex;
+/* background-image: url('./resources/castle.jpg'); */
+background-color: #cccccc;
+justify-content: center;
+height: 100vh;
+}
+
+.main-interface {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50vw
+}
+
+h1 {
+  font-size: 3vw;
+  color: #7851a9;
+  text-shadow: 2px 2px #000000;
+}
+
+h2 {
+  font-size: 2vw;
+  color: #7851a9;
+  text-shadow: 1px 1px #000000;
+}
+
+button {
+  width: 9vw;
+  height: 5vh;
+  font-size: 85%;
+  background-color: #e7b464;
+  margin: 3.5vw;
+  box-shadow: 2px 3px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #cf8b20;
+  box-shadow: none;
+}
+
+.player-interface {
+  width: 25vw;
+  border-right: 2px solid black;
+  text-align: center;
+}
+
+.opp-interface {
+  width: 25vw;
+  border-left: 2px solid black;
+  text-align: center;
+}
