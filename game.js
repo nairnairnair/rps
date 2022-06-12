@@ -1,60 +1,29 @@
-// var Player = require('./player.js');
-
 class Game {
   constructor(){
     this.playerScore = 0;
     this.oppScore = 0;
-    // this.gameType = ' ';
-    // this.resultsText = ' ';
-    var emma = new Player();
-    var opponent = new Player();
+    this.emma = new Player();
+    this.opponent = new Player();
+    this.resultsText = "";
   }
 
-  trainingRPS() {
-    if ((playerMove === 'rock') && (oppMove === 'scissors') ||
-        (playerMove === 'scissors') && (oppMove === 'paper') ||
-        (playerMove === 'paper') && (oppMove === 'rock')) {
+  playGameTrainingMode() {
+    if ((this.emma.rock) && (this.opponent.scissors) ||
+        (this.emma.paper) && (this.opponent.rock) ||
+        (this.emma.scissors) && (this.opponent.paper)) {
       this.playerScore++;
-      this.resultsText = "GOTTEM";
+      this.resultsText = "win"
     }
-    else if ((oppMove === 'rock') && (playerMove === 'scissors') ||
-            (oppMove === 'scissors') && (playerMove === 'paper') ||
-            (oppMove === 'paper') && (playerMove === 'rock')) {
+    else if ((this.emma.rock) && (this.opponent.paper) ||
+        (this.emma.scissors) && (this.opponent.rock) ||
+        (this.emma.paper) && (this.opponent.scissors)) {
       this.oppScore++;
-      this.resultsText = "YOU GOT ROCKED";
+      this.resultsText = "lose"
     }
     else {
-      this.resultsText = "A DRAW. WOW...";
+      this.resultsText = "draw"
     }
-  }
-
-  tournamentRPS() {
-    if ((playerMove === 'atk') && (oppMove === 'lowA' || 'lowB') ||
-        (playerMove === 'highB' || 'lowB') && (oppMove == 'atk') ||
-        (playerMove === 'lowA') && (oppMove === 'highB') ||
-        (playerMove === 'jumpA') && (oppMove === 'lowB')) {
-      this.playerScore++;
-      resultsText.innerText = "GOTTEM";
-    }
-    else if ((oppMove === 'atk') && (playerMove === 'lowA' || 'lowB') ||
-            (oppMove === 'highB' || 'lowB') && (playerMove == 'atk') ||
-            (oppMove === 'lowA') && (playerMove === 'highB') ||
-            (oppMove === 'jumpA') && (playerMove === 'lowB'))  {
-      this.oppScore++;
-      resultsText.innerText = "YOU GOT ROCKED";
-    }
-    else {
-      resultsText.innerText = "A DRAW. WOW...";
-    }
+    this.emma.resetScores();
+    this.opponent.resetScores();
   }
 }
-
-// module.exports = Game
-//
-// A Game should include:
-// // Two Player instances
-// // A way to keep track of the data for the game board
-// // A way to keep track of the selected game type
-// A way to check the Game’s board data for win conditions
-// A way to detect when a game is a draw (no one has won)
-// A way to reset the Game’s board to begin a new game
