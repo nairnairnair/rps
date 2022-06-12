@@ -1,85 +1,34 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="./styles.css">
     <title>Royal Punching Society</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
   </head>
   <body>
+    <aside class="player-interface">
+      <h4 class="player-score">0</h4>
+    </aside>
     <section class="main-interface">
-
       <h1>ROYAL PUNCHING SOCIETY</h1>
-      <h2>A TOURNAMENT OF PURE SKILL</h2>
-
-      <h3 class="game-blurb">Welcome to the Royal Punching Society.<h3>
-
-      <h2 class="training">Training</h2>
-      <h3 class="training-blurb">Here’s some stuff we found in a scribe’s desk. Also, here’s the scribe.
-         He’ll be training you to compete in the Royal Punching Society.
-         It’s his punishment for wasting valuable ink and parchment on- ...nay, I dare not speak of it.</h3>
-      <h4 class="training-rules">RULES:</h4>
-        <p class="move-name">ROCK</p>
-        <p>Beats SCISSORS but loses to PAPER</p>
-        <p class="move-name">PAPER</p>
-        <p>Beats ROCK but loses to SCISSORS</p>
-        <p class="move-name">SCISSORS</p>
-        <p>Beats PAPER but loses to ROCK</p>
-        <button class="opponent-button" id="scri-button" type="button">Train with The Scribe</button>
-
+      <h2>A TOURNAMENT OF PUREST SKILL</h2>
         <section>
-          <button class="training-button" id="rock-button">ROCK</button>
-          <button class="training-button" id="paper-button">PAPER</button>
-          <button class="training-button" id="scissors-button">SCISSORS</button>
+          <button class="mode-button" id="scribeButton">Train with the Scribe</button>
         </section>
+        <section>
+          <h3 class="results"></h3>
 
-      <h2 class="tournament-edition">R.P.S. Tournament Edition</h2>
-        <p class="tournament-blurb">tournament blurb</p>
-      <h4 class="tournament-rules">RULES:</h4>
-      <h5 class="more-tournament-rules"></h5>
-        <p class="move-name">ATTACK:</p>
-        <p>Beats LOW ATTACK and HIGH ATTACK but loses to LOW BLOCK and HIGH BLOCK</p>
-        <p class="move-name">LOW ATTACK:</p>
-        <p>Beats HIGH BLOCK but loses to ATTACK</p>
-        <p class="move-name">HIGH ATTACK:</p>
-        <p>Beats LOW BLOCK but loses to ATTACK</p>
-        <p class="move-name">LOW BLOCK:</p>
-        <p>Beats ATTACK but loses to LOW ATTACK</p>
-        <p class="move-name">HIGH BLOCK:</p>
-        <p>Beats ATTACK but loses to HIGH ATTACK</p>
-        <p class="move-fail-rule">If you use ANY MOVE MORE THAN TWICE CONSECUTIVELY,
-          your move will fail! Twice in a row is fine, but thrice? Nay. You lose.</p>
-        <h4 class="first-to-five">FIRST TO 5 WINS</h4>
-    </section>
-    <section class="player-side">
-      <h3 class="player">Player</h3>
-      <h4 class="player-wins">Wins:</h4>
-    </section>
-    <section class="computer-side">
-      <h3 class="opponent">Opponent</h3>
-        <section class="opponents">
-          <div class="scribe"
-            <img src="/" alt="The Scribe">
-          </div>
-          <div class="mix-a-lot"
-            <img src="/" alt="Lord Mix-A-Lot">
-            <button class="opponent-button" id="mix-button" type="button">Fight Lord Mix-A-Lot</button>
-          </div>
-          <div class="camperington"
-            <img src="/" alt="Sir Hapford Campington">
-            <button class="opponent-button" id="camp-button" type="button">Fight Sir Hapford Campington</button>
-          </div>
-          <div class="gertrude"
-            <img src="/" alt="Gertrude the Slayer">
-            <button class="opponent-button" id="gert-button" type="button">Fight Gertrude the Slayer</button>
-          </div>
-          <div class="princess"
-            <img src="/" alt="Princess Holsup Sporke">
-            <button class="opponent-button" id="prin-button" type="button">Fight Princess Holsup Sporke</button>
-          </div>
+          <button class="training-button" id="rockButton">ROCK</button>
+          <button class="training-button" id="paperButton">PAPER</button>
+          <button class="training-button" id="scissorsButton">SCISSORS</button>
         </section>
-      <h4 class="opponent-wins">Wins:</h4>
     </section>
-    <script src='./main.js'></script>
-    <script src='./game.js'></script>
-    <script src='./player.js'></script>
+    <aside class="opp-interface">
+      <h4 class="opp-score">0</h4>
+    </aside>
   </body>
+  <script type="text/javascript" src="player.js"></script>
+  <script type="text/javascript" src="game.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+  <script type="text/javascript" src="opponents.js"></script>
 </html>
