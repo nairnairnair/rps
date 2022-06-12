@@ -1,56 +1,41 @@
-// var Player = require('./player.js');
-// var Game = require('./game.js');
+var currentGame = new Game()
+//training move buttons
+// var scribeButton = document.getElementById('scribeButton')
+var rockButton = document.getElementById('rockButton')
+var paperButton = document.getElementById('paperButton')
+var scissorsButton = document.getElementById('scissorsButton')
 
-//navigate to training button
-
-//navigate to tournament button
+var results = document.querySelector('.results')
+var playerScore = document.querySelector('.player-score')
+var oppScore = document.querySelector('.opp-score')
 
 //training move buttons
-var rockButton = document.getElementById('rock-button')
-var paperButton = document.getElementById('paper-button')
-var scissorsButton = document.getElementById('scissors-button')
+// scribeButton.addEventListener('click', function() {
+//   }
+// )
 
+rockButton.addEventListener('click', playGame)
+paperButton.addEventListener('click', playGame)
+scissorsButton.addEventListener('click', playGame)
 
-//tournament opponent buttons
-// var mixButton = getElementByID('mix-button')
-// var campButton = getElementByID('camp-button')
-// var gertButton = getElementByID('gert-button')
-// var prinButton = getElementByID('prin-button')
-//
-// //tournament move buttons
-//
-// //reset button
-//
-// //home button
-//
-// //------------------------------------------------------------------------------
-//
-// //navigate to training button
-// .addEventListener('click', )
-//
-// //navigate to tournament button
-// .addEventListener('click', )
-//
-// //training move buttons
-rockButton.addEventListener('click', new Player.takeTurn)
-paperButton.addEventListener('click', Player.takeTurn)
-scissorsButton.addEventListener('click', Player.takeTurn)
-//
-// //tournament opponent buttons
-// mixButton.addEventListener('click', );
-// campButton.addEventListener('click', ;
-// gertButton.addEventListener('click', );
-// prinButton.addEventListener('click', );
-//
-// //tournament move buttons
-// .addEventListener('click', )
-// .addEventListener('click', )
-// .addEventListener('click', )
-// .addEventListener('click', )
-// .addEventListener('click', )
-//
-// //reset button
-// .addEventListener('click', )
-//
-// //home button
-// .addEventListener('click', )
+function playGame(){
+  currentGame.emma.takeTurn(event.target.id);
+  currentGame.opponent.takeTurn(getRandomTrainingMode())
+  currentGame.playGameTrainingMode()
+  displayGameResults()
+}
+
+function getRandomTrainingMode(){
+  var choiceIDs = ['rockButton', 'paperButton', 'scissorsButton'];
+  return choiceIDs[Math.floor(Math.random() * choiceIDs.length)]
+}
+
+function displayGameResults(){
+  results.innerText = currentGame.resultsText;
+  playerScore.innerText = currentGame.playerScore;
+  oppScore.innerText = currentGame.oppScore;
+}
+// player must click the train with the scribe button
+// player must click rock/paper/scissors
+
+//we can make choiceIDs the parameter to make it dynamic
