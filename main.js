@@ -39,6 +39,7 @@ var playerPortrait = document.querySelector('.player-portrait')
 var oppPortrait = document.querySelector('.opp-portrait')
 var playerScore = document.querySelector('.player-score')
 var oppScore = document.querySelector('.opp-score')
+var oppBio = document.querySelector('.opp-bio')
 
 var playerHpBar = document.getElementById('playerHpBar')
 var oppHpBar = document.getElementById('oppHpBar')
@@ -99,6 +100,7 @@ document.location.reload();
 
 function displayGameView(){
   loreBlock.classList.add('hidden');
+  oppBio.classList.remove('hidden');
   playerMoveImage.classList.remove('hidden');
   oppMoveImage.classList.remove('hidden');
   playerName.classList.remove('hidden');
@@ -114,6 +116,7 @@ function displayGameView(){
 
 function selectMix(){
   oppName.innerText = 'Lord Mix-A-Lot';
+  oppBio.innerText = `He likes mix-ups and he cannot lie. Guess if he's going low or high.`;
   oppPortrait.src = 'resources/mix.jpeg';
   tournamentChoiceIDs = mixMovelist;
   displayMoveButtons()
@@ -121,6 +124,7 @@ function selectMix(){
 
 function selectCamp(){
   oppName.innerText = 'Sir Happy Camperington';
+  oppBio.innerText = 'If this game had projectiles, this man would spam them. Can you break through his defenses?';
   oppPortrait.src = 'resources/camp.jpeg';
   tournamentChoiceIDs = camperMovelist;
   displayMoveButtons()
@@ -128,6 +132,7 @@ function selectCamp(){
 
 function selectGert(){
   oppName.innerText = 'Gertrudius the Slayer';
+  oppBio.innerText = 'A vicious and unrelenting foe. Almost killed you last time.';
   oppPortrait.src = 'resources/gert.jpeg';
   tournamentChoiceIDs = gertMovelist;
   displayMoveButtons()
@@ -135,6 +140,7 @@ function selectGert(){
 
 function selectPrin(){
   oppName.innerText = 'Princess Holsup Sporke';
+  oppBio.innerText = 'The Crown Princess of Gettyimagesia. Completely unpredictable. Good luck!';
   oppPortrait.src = 'resources/sporke.jpeg';
   tournamentChoiceIDs = sporkeMovelist;
   displayMoveButtons()
@@ -143,6 +149,7 @@ function selectPrin(){
 function displayMoveButtons(){
   currentGame.playerScore = 0;
   currentGame.oppScore = 0;
+  playerPortrait.src = 'resources/harold.webp';
   playerScore.innerText = `Rounds Won: 0`;
   playerHpBar.style.backgroundColor = '#1ac734'
   oppHpBar.style.backgroundColor = '#1ac734'
@@ -250,7 +257,9 @@ function haroldHpBar(){
   } else if (currentGame.oppScore === 4){
     playerHpBar.style.backgroundColor = '#e30e0e'
   } else if (currentGame.oppScore >= 5){
-    playerHpBar.style.backgroundColor = '#000000'
+    playerHpBar.style.backgroundColor = '#000000';
+    playerPortrait.src = 'resources/haroldLoss.png';
+    results.innerText = 'YOU DIED!!!!!';
   }
 }
 
@@ -265,7 +274,9 @@ function hpBar(){
   } else if (currentGame.playerScore === 4){
     oppHpBar.style.backgroundColor = '#e30e0e'
   } else if (currentGame.playerScore >= 5){
-    oppHpBar.style.backgroundColor = '#000000'
+    oppHpBar.style.backgroundColor = '#000000';
+    playerPortrait.src = 'resources/haroldWin.jpeg';
+    results.innerText = 'ENEMY VANQUISHED!!!!!';
   }
 }
 
