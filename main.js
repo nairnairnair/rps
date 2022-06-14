@@ -6,10 +6,16 @@ var homeViewButton = document.getElementById('homeViewButton')
 
 var trainingButtons = document.querySelectorAll('.training-button')
 var tournamentButtons = document.querySelectorAll('.tournament-button')
+var oppButtons = document.querySelectorAll('.opp-button')
 
 var rockButton = document.getElementById('rockButton')
 var paperButton = document.getElementById('paperButton')
 var scissorsButton = document.getElementById('scissorsButton')
+
+var mixButton = document.getElementById('mixButton')
+var campButton = document.getElementById('campButton')
+var gertButton = document.getElementById('gertButton')
+var prinButton = document.getElementById('prinButton')
 
 var atkButton = document.getElementById('atkButton')
 var jumpAtkButton = document.getElementById('jumpAtkButton')
@@ -28,6 +34,11 @@ var oppPortrait = document.querySelector('.opp-portrait')
 var playerScore = document.querySelector('.player-score')
 var oppScore = document.querySelector('.opp-score')
 
+var playerHpBar = document.getElementById('playerHpBar')
+var oppHpBar = document.getElementById('oppHpBar')
+
+var tournamentChoiceIDs = ['atkButton', 'jumpAtkButton', 'lowAtkButton', 'highBlockButton', 'lowBlockButton']
+
 //training move buttons
 
 scribeViewButton.addEventListener('click', displayTrainingView)
@@ -37,6 +48,11 @@ homeViewButton.addEventListener('click', displayHomeView)
 rockButton.addEventListener('click', playGameTraining)
 paperButton.addEventListener('click', playGameTraining)
 scissorsButton.addEventListener('click', playGameTraining)
+
+mixButton.addEventListener('click', selectMix)
+campButton.addEventListener('click', selectCamp)
+gertButton.addEventListener('click', selectGert)
+prinButton.addEventListener('click', selectPrin)
 
 atkButton.addEventListener('click', playGameTournament)
 jumpAtkButton.addEventListener('click', playGameTournament)
@@ -54,9 +70,11 @@ function displayTrainingView() {
 
 function displayTournamentView() {
   displayGameView();
+  haroldHpBar()
+  hpBar()
   results.innerText = 'It begins...'
-  for (var i = 0; i < tournamentButtons.length; i++) {
-    tournamentButtons[i].classList.remove('hidden');
+  for (var i = 0; i < oppButtons.length; i++) {
+    oppButtons[i].classList.remove('hidden');
   }
 }
 
@@ -76,6 +94,42 @@ function displayGameView(){
   scribeViewButton.classList.add('hidden');
   tournamentViewButton.classList.add('hidden');
   homeViewButton.classList.remove('hidden');
+}
+
+function selectMix(){
+  oppName.innerText = 'Lord Mix-A-Lot';
+  oppPortrait.src = 'resources/mix.jpeg';
+  tournamentChoiceIDs = mixMovelist;
+  displayMoveButtons()
+}
+
+function selectCamp(){
+  oppName.innerText = 'Sir Happy Camperington';
+  oppPortrait.src = 'resources/camp.jpeg';
+  tournamentChoiceIDs = camperMovelist;
+  displayMoveButtons()
+}
+
+function selectGert(){
+  oppName.innerText = 'Gertrudius the Slayer';
+  oppPortrait.src = 'resources/gert.jpeg';
+  tournamentChoiceIDs = gertMovelist;
+  displayMoveButtons()
+}
+
+function selectPrin(){
+  oppName.innerText = 'Princess Holsup Sporke';
+  oppPortrait.src = 'resources/sporke.jpeg';
+  tournamentChoiceIDs = sporkeMovelist;
+  displayMoveButtons()
+}
+
+function displayMoveButtons(){
+  playerScore.innerText = `Rounds Won: 0`;
+  oppScore.innerText = `Rounds Won: 0`;
+  for (var i = 0; i < tournamentButtons.length; i++) {
+    tournamentButtons[i].classList.remove('hidden');
+  }
 }
 
 function playGameTraining(){
@@ -102,7 +156,6 @@ function getRandomTrainingMode(){
 }
 
 function getRandomTournamentMode(){
-  var tournamentChoiceIDs = ['atkButton', 'jumpAtkButton', 'lowAtkButton', 'highBlockButton', 'lowBlockButton'];
   return tournamentChoiceIDs[Math.floor(Math.random() * tournamentChoiceIDs.length)]
 }
 
@@ -166,11 +219,42 @@ function imageAssignerTournamentOpponent(currentGame) {
   }
 }
 
+function haroldHpBar(){
+    playerHpBar.style.backgroundColor = '#1ac734'
+  if (currentGame.oppScore === 1){
+    playerHpBar.style.backgroundColor = '#79c71a'
+  } else if (currentGame.oppScore === 2){
+    playerHpBar.style.backgroundColor = '#eff229'
+  } else if (currentGame.oppScore === 3){
+    playerHpBar.style.backgroundColor = '#f27929'
+  } else if (currentGame.oppScore === 4){
+    playerHpBar.style.backgroundColor = '#e30e0e'
+  } else if (currentGame.oppScore >= 5){
+    playerHpBar.style.backgroundColor = '#000000'
+  }
+}
+
+function hpBar(){
+    oppHpBar.style.backgroundColor = '#1ac734'
+  if (currentGame.playerScore === 1){
+    oppHpBar.style.backgroundColor = '#79c71a'
+  } else if (currentGame.playerScore === 2){
+    oppHpBar.style.backgroundColor = '#eff229'
+  } else if (currentGame.playerScore === 3){
+    oppHpBar.style.backgroundColor = '#f27929'
+  } else if (currentGame.playerScore === 4){
+    oppHpBar.style.backgroundColor = '#e30e0e'
+  } else if (currentGame.playerScore >= 5){
+    oppHpBar.style.backgroundColor = '#000000'
+  }
+}
+
 function displayGameResults(){
   results.innerText = currentGame.resultsText;
   playerScore.innerText = `Rounds Won: ${currentGame.playerScore}`;
   oppScore.innerText = `Rounds Won: ${currentGame.oppScore}`;
 }
+
 // player must click the train with the scribe button
 // player must click rock/paper/scissors
 
