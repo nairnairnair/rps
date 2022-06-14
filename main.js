@@ -46,6 +46,7 @@ lowBlockButton.addEventListener('click', playGameTournament)
 
 function displayTrainingView() {
   displayGameView();
+  results.innerText = 'On shoot...'
   for (var i = 0; i < trainingButtons.length; i++) {
     trainingButtons[i].classList.remove('hidden');
   }
@@ -53,6 +54,7 @@ function displayTrainingView() {
 
 function displayTournamentView() {
   displayGameView();
+  results.innerText = 'It begins...'
   for (var i = 0; i < tournamentButtons.length; i++) {
     tournamentButtons[i].classList.remove('hidden');
   }
