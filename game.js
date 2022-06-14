@@ -45,6 +45,8 @@ class Game {
     else {
       this.resultsText = "THE TENSION IS GROWING"
     }
+    haroldHpBar()
+    hpBar()
     this.harold.resetScores();
     this.opponent.resetScores();
   }
