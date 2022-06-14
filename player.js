@@ -1,6 +1,6 @@
 class Player {
-  constructor() {
-    this.name = "";
+  constructor(name) {
+    this.name = name;
     this.wins = 0;
     this.rock = false;
     this.paper = false;

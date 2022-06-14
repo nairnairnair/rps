@@ -1,6 +1,9 @@
 var currentGame = new Game()
 //training move buttons
-// var scribeButton = document.getElementById('scribeButton')
+var scribeButton = document.getElementById('scribeViewButton')
+var tournamentButton = document.getElementById('tournamentViewButton')
+var homeButton = document.getElementById('homeViewButton')
+
 var rockButton = document.getElementById('rockButton')
 var paperButton = document.getElementById('paperButton')
 var scissorsButton = document.getElementById('scissorsButton')
@@ -11,12 +14,14 @@ var lowAtkButton = document.getElementById('lowAtkButton')
 var highBlockButton = document.getElementById('highBlockButton')
 var lowBlockButton = document.getElementById('lowBlockButton')
 
+var playerMoveImage = document.querySelector('.player-move-image')
+var oppMoveImage = document.querySelector('.opp-move-image')
+
 var results = document.querySelector('.results')
 var playerScore = document.querySelector('.player-score')
 var oppScore = document.querySelector('.opp-score')
 
 //training move buttons
-// scribeButton.addEventListener('click', function()
 
 rockButton.addEventListener('click', playGameTraining)
 paperButton.addEventListener('click', playGameTraining)
@@ -31,6 +36,8 @@ lowBlockButton.addEventListener('click', playGameTournament)
 function playGameTraining(){
   currentGame.harold.takeTurnTraining(event.target.id);
   currentGame.opponent.takeTurnTraining(getRandomTrainingMode())
+  imageAssignerTrainingPlayer(currentGame)
+  imageAssignerTrainingOpponent(currentGame)
   currentGame.playGameTrainingMode()
   displayGameResults()
 }
@@ -38,6 +45,8 @@ function playGameTraining(){
 function playGameTournament(){
   currentGame.harold.takeTurnTournament(event.target.id);
   currentGame.opponent.takeTurnTournament(getRandomTournamentMode())
+  imageAssignerTournamentPlayer(currentGame)
+  imageAssignerTournamentOpponent(currentGame)
   currentGame.playGameTournamentMode()
   displayGameResults()
 }
@@ -52,6 +61,66 @@ function getRandomTournamentMode(){
   return tournamentChoiceIDs[Math.floor(Math.random() * tournamentChoiceIDs.length)]
 }
 
+function imageAssignerTrainingPlayer(currentGame) {
+  if (currentGame.harold.rock) {
+  playerMoveImage.src = './resources/rock.jpeg';
+  }
+  else if (currentGame.harold.paper) {
+  playerMoveImage.src = './resources/paper.jpeg';
+  }
+  else if (currentGame.harold.scissors) {
+  playerMoveImage.src = './resources/scissors.jpeg';
+  }
+}
+
+function imageAssignerTrainingOpponent(currentGame) {
+  if (currentGame.opponent.rock) {
+    oppMoveImage.src = 'resources/rock.jpeg';
+  }
+  else if (currentGame.opponent.paper) {
+    oppMoveImage.src = 'resources/paper.jpeg';
+  }
+  else if (currentGame.opponent.scissors) {
+    oppMoveImage.src = 'resources/scissors.jpeg';
+  }
+}
+
+function imageAssignerTournamentPlayer(currentGame) {
+  if (currentGame.harold.attack) {
+  playerMoveImage.src = './resources/attackPlayer.png';
+  }
+  else if (currentGame.harold.jumpAttack) {
+  playerMoveImage.src = './resources/jumpAttackPlayer.png';
+  }
+  else if (currentGame.harold.lowAttack) {
+  playerMoveImage.src = './resources/lowAttackPlayer.png';
+  }
+  else if (currentGame.harold.highBlock) {
+  playerMoveImage.src = './resources/highBlockPlayer.png';
+  }
+  else if (currentGame.harold.lowBlock) {
+  playerMoveImage.src = './resources/lowBlockPlayer.png';
+  }
+}
+
+function imageAssignerTournamentOpponent(currentGame) {
+  if (currentGame.opponent.attack) {
+    oppMoveImage.src = 'resources/attackOpp.png';
+  }
+  else if (currentGame.opponent.jumpAttack) {
+    oppMoveImage.src = 'resources/jumpAttackOpp.png';
+  }
+  else if (currentGame.opponent.lowAttack) {
+    oppMoveImage.src = 'resources/lowAttackOpp.png';
+  }
+  else if (currentGame.opponent.highBlock) {
+    oppMoveImage.src = 'resources/highBlockOpp.png';
+  }
+  else if (currentGame.opponent.lowBlock) {
+    oppMoveImage.src = 'resources/lowBlockOpp.png';
+  }
+}
+
 function displayGameResults(){
   results.innerText = currentGame.resultsText;
   playerScore.innerText = `Rounds Won: ${currentGame.playerScore}`;
@@ -61,3 +130,7 @@ function displayGameResults(){
 // player must click rock/paper/scissors
 
 //we can make choiceIDs the parameter to make it dynamic
+
+//questions for olivia:
+//would they prefer we hid things by adding a 'hidden' class and toggling it on or off? or some other form of dom manipulation?
+//

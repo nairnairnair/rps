@@ -2,8 +2,8 @@ class Game {
   constructor(){
     this.playerScore = 0;
     this.oppScore = 0;
-    this.harold = new Player();
-    this.opponent = new Player();
+    this.harold = new Player('Harold');
+    this.opponent = new Player('The Scribe');
     this.resultsText = "";
   }
 
