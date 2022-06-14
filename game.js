@@ -33,17 +33,17 @@ class Game {
         (this.harold.lowAttack) && (this.opponent.highBlock) ||
         (this.harold.jumpAttack) && (this.opponent.lowBlock)) {
       this.playerScore++;
-      this.resultsText = "YOU LANDED A HIT"
+      this.resultsText = "YOU LANDED A HIT!"
     }
     else if ((this.opponent.attack) && (this.harold.jumpAttack || this.harold.lowAttack) ||
         (this.opponent.highBlock || this.opponent.lowBlock) && (this.harold.attack) ||
         (this.opponent.lowAttack) && (this.harold.highBlock) ||
         (this.opponent.jumpAttack) && (this.harold.lowBlock)) {
       this.oppScore++;
-      this.resultsText = "YOU GOT HIT"
+      this.resultsText = "YOU GOT HIT!"
     }
     else {
-      this.resultsText = "THE TENSION IS GROWING"
+      this.resultsText = "THE TENSION IS GROWING!"
     }
     haroldHpBar()
     hpBar()

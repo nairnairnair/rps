@@ -30,7 +30,7 @@ background-color: gray;
 }
 
 h1 {
-  font-size: 3vw;
+  font-size: 3.5vw;
   color: #7851a9;
   text-shadow: 2px 2px #000000;
 }
@@ -166,7 +166,15 @@ button:hover {
   border-radius: 10px;
 }
 
+.opp-bio {
+  width: 23vw;
+  background: url('resources/enemybio.png');
+  background-size: cover;
+  padding: 3vh;
+  color: #ffffff;
+}
+
 .graphic-design{
-  margin-top: 50vh;
-  width: 15vw
+  margin-top: 20vh;
+  width: 20vw
 }
