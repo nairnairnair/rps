@@ -1,8 +1,11 @@
 var currentGame = new Game()
 //training move buttons
-var scribeButton = document.getElementById('scribeViewButton')
-var tournamentButton = document.getElementById('tournamentViewButton')
-var homeButton = document.getElementById('homeViewButton')
+var scribeViewButton = document.getElementById('scribeViewButton')
+var tournamentViewButton = document.getElementById('tournamentViewButton')
+var homeViewButton = document.getElementById('homeViewButton')
+
+var trainingButtons = document.querySelectorAll('.training-button')
+var tournamentButtons = document.querySelectorAll('.tournament-button')
 
 var rockButton = document.getElementById('rockButton')
 var paperButton = document.getElementById('paperButton')
@@ -18,10 +21,18 @@ var playerMoveImage = document.querySelector('.player-move-image')
 var oppMoveImage = document.querySelector('.opp-move-image')
 
 var results = document.querySelector('.results')
+var playerName = document.querySelector('.player-name')
+var oppName = document.querySelector('.opp-name')
+var playerPortrait = document.querySelector('.player-portrait')
+var oppPortrait = document.querySelector('.opp-portrait')
 var playerScore = document.querySelector('.player-score')
 var oppScore = document.querySelector('.opp-score')
 
 //training move buttons
+
+scribeViewButton.addEventListener('click', displayTrainingView)
+tournamentViewButton.addEventListener('click', displayTournamentView)
+homeViewButton.addEventListener('click', displayHomeView)
 
 rockButton.addEventListener('click', playGameTraining)
 paperButton.addEventListener('click', playGameTraining)
@@ -32,6 +43,38 @@ jumpAtkButton.addEventListener('click', playGameTournament)
 lowAtkButton.addEventListener('click', playGameTournament)
 highBlockButton.addEventListener('click', playGameTournament)
 lowBlockButton.addEventListener('click', playGameTournament)
+
+function displayTrainingView() {
+  displayGameView();
+  for (var i = 0; i < trainingButtons.length; i++) {
+    trainingButtons[i].classList.remove('hidden');
+  }
+}
+
+function displayTournamentView() {
+  displayGameView();
+  for (var i = 0; i < tournamentButtons.length; i++) {
+    tournamentButtons[i].classList.remove('hidden');
+  }
+}
+
+function displayHomeView() {
+document.location.reload();
+}
+
+function displayGameView(){
+  playerMoveImage.classList.remove('hidden');
+  oppMoveImage.classList.remove('hidden');
+  playerName.classList.remove('hidden');
+  oppName.classList.remove('hidden');
+  playerPortrait.classList.remove('hidden');
+  oppPortrait.classList.remove('hidden');
+  playerScore.classList.remove('hidden');
+  oppScore.classList.remove('hidden');
+  scribeViewButton.classList.add('hidden');
+  tournamentViewButton.classList.add('hidden');
+  homeViewButton.classList.remove('hidden');
+}
 
 function playGameTraining(){
   currentGame.harold.takeTurnTraining(event.target.id);
