@@ -63,25 +63,25 @@ function getRandomTournamentMode(){
 
 function imageAssignerTrainingPlayer(currentGame) {
   if (currentGame.harold.rock) {
-  playerMoveImage.src = './resources/rock.jpeg';
+  playerMoveImage.src = './resources/rockPlayer.jpeg';
   }
   else if (currentGame.harold.paper) {
-  playerMoveImage.src = './resources/paper.jpeg';
+  playerMoveImage.src = './resources/paperPlayer.jpeg';
   }
   else if (currentGame.harold.scissors) {
-  playerMoveImage.src = './resources/scissors.jpeg';
+  playerMoveImage.src = './resources/scissorsPlayer.jpeg';
   }
 }
 
 function imageAssignerTrainingOpponent(currentGame) {
   if (currentGame.opponent.rock) {
-    oppMoveImage.src = 'resources/rock.jpeg';
+    oppMoveImage.src = 'resources/rockOpp.jpeg';
   }
   else if (currentGame.opponent.paper) {
-    oppMoveImage.src = 'resources/paper.jpeg';
+    oppMoveImage.src = 'resources/paperOpp.jpeg';
   }
   else if (currentGame.opponent.scissors) {
-    oppMoveImage.src = 'resources/scissors.jpeg';
+    oppMoveImage.src = 'resources/scissorsOpp.jpeg';
   }
 }
 

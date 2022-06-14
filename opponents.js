@@ -1,82 +1,10 @@
 var scribeMovelist = [
-  'rock',
-  'paper',
-  'scissors',
+  'rockButton',
+  'paperButton',
+  'scissorsButton',
 ]
 
-var mixMovelist = [
-  'atk',
-  'atk',
-  'lowA',
-  'lowA',
-  'lowA',
-  'lowA',
-  'lowA',
-  'lowA',
-  'jumpA',
-  'jumpA',
-  'jumpA',
-  'jumpA',
-  'jumpA',
-  'jumpA',
-  'highB',
-  'highB',
-  'highB',
-  'highB',
-  'lowB',
-  'lowB'
-]
-
-var camperMovelist = [
-  'atk',
-  'atk',
-  'atk',
-  'atk',
-  'atk',
-  'jumpA',
-  'lowA',
-  'highB',
-  'highB',
-  'highB',
-  'highB',
-  'highB',
-  'highB',
-  'highB',
-  'lowB',
-  'lowB',
-  'lowB',
-  'lowB',
-  'lowB',
-  'lowB',
-]
-
-var gertMovelist = [
-  'atk',
-  'atk',
-  'atk',
-  'atk',
-  'atk',
-  'atk',
-  'atk',
-  'atk',
-  'atk',
-  'atk',
-  'atk',
-  'atk',
-  'lowA',
-  'lowA',
-  'lowA',
-  'lowA',
-  'jumpA',
-  'jumpA',
-  'jumpA',
-  'jumpA',
-]
-
-var sporkeMovelist = [
-  'atk',
-  'jumpA',
-  'lowA',
-  'highB',
-  'lowB'
-]
+//scribe button
+// <section>
+//   <button class="mode-button" id="scribeButton">Train with the Scribe</button>
+// </section>
