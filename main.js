@@ -125,7 +125,11 @@ function selectPrin(){
 }
 
 function displayMoveButtons(){
+  currentGame.playerScore = 0;
+  currentGame.oppScore = 0;
   playerScore.innerText = `Rounds Won: 0`;
+  playerHpBar.style.backgroundColor = '#1ac734'
+  oppHpBar.style.backgroundColor = '#1ac734'
   oppScore.innerText = `Rounds Won: 0`;
   for (var i = 0; i < tournamentButtons.length; i++) {
     tournamentButtons[i].classList.remove('hidden');
