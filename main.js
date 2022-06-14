@@ -1,5 +1,8 @@
 var currentGame = new Game()
 //training move buttons
+
+var loreBlock = document.querySelector('.lore-block')
+
 var scribeViewButton = document.getElementById('scribeViewButton')
 var tournamentViewButton = document.getElementById('tournamentViewButton')
 var homeViewButton = document.getElementById('homeViewButton')
@@ -23,6 +26,9 @@ var lowAtkButton = document.getElementById('lowAtkButton')
 var highBlockButton = document.getElementById('highBlockButton')
 var lowBlockButton = document.getElementById('lowBlockButton')
 
+var trainingRules = document.querySelector('.training-rules')
+var tournamentRules = document.querySelector('.tournament-rules')
+
 var playerMoveImage = document.querySelector('.player-move-image')
 var oppMoveImage = document.querySelector('.opp-move-image')
 
@@ -37,9 +43,12 @@ var oppScore = document.querySelector('.opp-score')
 var playerHpBar = document.getElementById('playerHpBar')
 var oppHpBar = document.getElementById('oppHpBar')
 
+var graphicDesign = document.querySelector('.graphic-design')
+
 var tournamentChoiceIDs = ['atkButton', 'jumpAtkButton', 'lowAtkButton', 'highBlockButton', 'lowBlockButton']
 
 //training move buttons
+
 
 scribeViewButton.addEventListener('click', displayTrainingView)
 tournamentViewButton.addEventListener('click', displayTournamentView)
@@ -60,9 +69,11 @@ lowAtkButton.addEventListener('click', playGameTournament)
 highBlockButton.addEventListener('click', playGameTournament)
 lowBlockButton.addEventListener('click', playGameTournament)
 
+
 function displayTrainingView() {
   displayGameView();
   results.innerText = 'On shoot...'
+  trainingRules.classList.remove('hidden');
   for (var i = 0; i < trainingButtons.length; i++) {
     trainingButtons[i].classList.remove('hidden');
   }
@@ -73,6 +84,10 @@ function displayTournamentView() {
   haroldHpBar()
   hpBar()
   results.innerText = 'It begins...'
+  tournamentRules.classList.remove('hidden');
+  graphicDesign.classList.remove('hidden');
+  playerHpBar.classList.remove('hidden');
+  oppHpBar.classList.remove('hidden');
   for (var i = 0; i < oppButtons.length; i++) {
     oppButtons[i].classList.remove('hidden');
   }
@@ -83,6 +98,7 @@ document.location.reload();
 }
 
 function displayGameView(){
+  loreBlock.classList.add('hidden');
   playerMoveImage.classList.remove('hidden');
   oppMoveImage.classList.remove('hidden');
   playerName.classList.remove('hidden');
