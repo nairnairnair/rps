@@ -23,8 +23,8 @@ class Game {
     else {
       this.resultsText = "CUT! IT'S A DRAW!!!"
     }
-    this.harold.resetScores();
-    this.opponent.resetScores();
+      this.harold.resetScores();
+      this.opponent.resetScores();
   }
 
   playGameTournamentMode() {
@@ -45,8 +45,6 @@ class Game {
     else {
       this.resultsText = "THE TENSION IS GROWING!"
     }
-    haroldHpBar()
-    hpBar()
     this.harold.resetScores();
     this.opponent.resetScores();
   }

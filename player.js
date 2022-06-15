@@ -10,8 +10,8 @@ class Player {
     this.lowAttack = false;
     this.highBlock = false;
     this.lowBlock = false;
-
   }
+
   takeTurnTraining(id){
     if (id === 'rockButton') {
       this.rock = true;

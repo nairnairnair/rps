@@ -98,7 +98,6 @@ h2 {
   justify-content: space-around;
 }
 
-
 button {
   width: 9vw;
   height: 7vh;
@@ -121,8 +120,21 @@ button:hover {
   border-right: 2px solid black;
   align-items: center;
   background: url('/Users/emmacintosh/turing-mod1/rps/resources/oppbackground.jpg');
-  /* background-repeat: no-repeat; */
   background-size: cover
+}
+
+h3 {
+  width: 15vw;
+  background-color: #efb84d;
+  border-radius: 10px;
+  text-align: center;
+}
+
+h4 {
+  width: 9vw;
+  background-color: #efb84d;
+  border-radius: 10px;
+  text-align: center;
 }
 
 .player-portrait {
@@ -147,7 +159,6 @@ button:hover {
   border-left: 2px solid black;
   align-items: center;
   background: url('/Users/emmacintosh/turing-mod1/rps/resources/playerbackground.jpeg');
-  /* background-repeat: no-repeat; */
   background-size: cover
 }
 
@@ -156,7 +167,6 @@ button:hover {
   width: 13vw;
   border: 4px solid #efb84d;
   border-radius: 10px;
-  /* background: url()) */
 }
 
 #oppHpBar {
