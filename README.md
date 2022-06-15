@@ -49,10 +49,10 @@ The project is divided up into:
 * index.html: where the html lives
 * opponents.js: contains the arrays used to influence the likelihood of different opponents to use different moves
 
-##Future Features:
+## Future Features:
 
 I wanted to add a fanfare sound effect to the page to complete the awful 90's webpage vibes but didn't have time to add it. I also wanted to add a function that would cause players using a move three consecutive times to lose the round as a way to encourage thoughtful play and to discourage button mashing. Instead, I have a character reference these cut features, both of which are still *technically* manually possible by choosing to respect the rule of three and by manually playing the included fanfare.mp3 (feel free to try it, it's very compressed). I would love to add these at some point, in addition to more dynamic elements, such as .gifs and changing portraits and dialogue for opponents and the scribe.
 
-##Reflections:
+## Reflections:
 
 I got way too excited about adding features outside the scope of the project and worked on those first, then realized I didn't even have basic game functionality, so I archived it all and started fresh. It was a challenge packing all of these extra features into this over the span of a few days, but I think it went pretty well. My mentor (Phil Lewis) and rock (Olivia Whitehead) gave me great feedback and helped me troubleshoot a few key issues. I had a ton of fun making this functional, flavorful abomination and I hope you have fun playing it.
